@@ -7,18 +7,27 @@ r"""
 Student Manager Constents
 This module creates some constents for this project.
 """
-import datetime
-import time
+import os
 
 NOT_DEFINED = None
 EMPTY = NOT_DEFINED
 
-MALE = "male"
-FEMALE = "female"
+MALE = "M"
+FEMALE = "F"
 
-DATE = datetime.datetime
-CURRENT_TIME =  time.time
+# C14147 Remote Connection Toolkit Whether Available
+RCT_AVAILABLE = False
 
-CLASS_CHANGE = "class_change"
-ADD_PUNISHMENT = "add_punishment"
-DEL_PUNISHMENT = "del_punishment"
+# Login Background Image
+LOGIN_BGI = True
+
+# File Types
+SQLite = "SQLite (*.db *.sqlite *.sqlite3)"
+
+# SQL Type Looker
+def sql_looker(path: str) -> str:
+    if path.endswith(
+        ('.db','.sqlite','.sqlite3')    # SQLite
+    ):
+        return 'sqlite3'
+
